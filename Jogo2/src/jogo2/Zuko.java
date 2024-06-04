@@ -15,9 +15,11 @@ public class Zuko extends Personagem {
 
     @Override
     public void atacar(Personagem oponente) {
-        if (!oponente.isDefendendo()) {
-            int dano = this.getDano();
-            oponente.setSaude(oponente.getSaude() - dano);
+        int dano = this.getDano();
+        if (oponente.isDefendendo()) {
+            dano /= 2; // dano é reduzido pela metade se o oponente está defendendo
         }
+        oponente.setSaude(oponente.getSaude() - dano);
+        oponente.setDefendendo(false); // resetar o estado de defesa do oponente após ser atacado
     }
 }

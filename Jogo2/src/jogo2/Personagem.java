@@ -16,7 +16,7 @@ public abstract class Personagem {
         this.saude = saude;
         this.dano = dano;
         this.defesa = defesa;
-        this.defendendo = false; // Inicialmente, o personagem não está defendendo
+        this.defendendo = defendendo; // Inicialmente, o personagem não está defendendo
     }
 
     // Métodos getter e setter para o atributo defendendo
